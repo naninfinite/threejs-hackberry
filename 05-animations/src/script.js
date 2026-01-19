@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { thickness } from 'three/tsl'
+import { deltaTime, thickness } from 'three/tsl'
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -44,6 +44,11 @@ const currentTime = Date.now()
 const deltaTime = currentTime - time
 time = currentTime
 
+console.log(
+    'dt:', deltaTime.toFixed(2), 'ms',
+    'fps:', (1000 / deltaTime).toFixed(1)
+)
+
 //update objects
 mesh.rotation.y += 0.01 * deltaTime
 
@@ -56,3 +61,4 @@ window.requestAnimationFrame(tick)
 
 }
 tick()
+
