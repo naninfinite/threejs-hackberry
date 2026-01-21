@@ -35,8 +35,9 @@ renderer.setSize(sizes.width, sizes.height)
 /* 
 Animate
 */
+gsap.to(mesh.position, {duration: 1, delay: 1, x: 2})
 //let time = Date.now()
-const clock = new THREE.Clock()
+//const clock = new THREE.Clock()
 
 const tick = () => {
 
@@ -46,7 +47,7 @@ const tick = () => {
 //const currentTime = Date.now()
 //const deltaTime = currentTime - time
 //time = currentTime
-const elapsedTime = clock.getElapsedTime()
+//const elapsedTime = clock.getElapsedTime()
 
 
 /*console.log(
