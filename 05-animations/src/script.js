@@ -1,5 +1,7 @@
+import './style.css'
 import * as THREE from 'three'
-import { deltaTime } from 'three/tsl'
+import gsap from 'gsap'
+
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -58,7 +60,11 @@ console.log(`dt: ${deltaTime.toFixed(2)} ms | fps: ${(1000 / deltaTime).toFixed(
 
 //update objects
 //mesh.rotation.y += 0.001 * deltaTime
-mesh.rotation.y = clock.getElapsedTime()
+//mesh.rotation.y = clock.getElapsedTime()
+/*mesh.rotation.y = clock.getElapsedTime() * Math.cos(elapsedTime)
+mesh.rotation.x = clock.getElapsedTime() * Math.sin(elapsedTime)
+*/
+
 
 //render
 renderer.render(scene, camera)
