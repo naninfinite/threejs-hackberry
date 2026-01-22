@@ -34,8 +34,14 @@ camera.lookAt(mesh.position)
 scene.add(camera)
 
 //cursor
+const cursor = {
+    x: 0,
+    y: 0
+}
 window.addEventListener('mousemove', (event) => 
 {
+    cursor.x = event.clientX / sizes.width - 0.5
+    cursor.y = event.clientY / sizes.height - 0.5
     console.log(event.clientX, event.clientY)
 })
 
@@ -54,6 +60,10 @@ const tick = () =>
 
     // Update objects
     mesh.rotation.y = elapsedTime;
+
+    //cursor
+    camera.position.x = cursor.x 
+    camera.position.y = cursor.y
 
     // Render
     renderer.render(scene, camera)
